@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: federationships
+    database: TranspAcces
+    schema: dbo
+    tables:
+      - name: Disabilities
+      - name: Users
+      - name: DisabilitiesByUser

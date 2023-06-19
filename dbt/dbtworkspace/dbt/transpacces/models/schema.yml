@@ -7,4 +7,4 @@ sources:
     tables:
       - name: Disabilities
       - name: Users
-      - name: DisabilitiesByUser
+      - name: RecurrenceServices

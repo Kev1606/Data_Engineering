@@ -5,7 +5,7 @@ SELECT
     ROW_NUMBER() OVER (ORDER BY [year], [month]) AS id,
     [month],
     [year],
-    SUM(feePercentage) AS suma_fee_porcentaje
+    SUM(feePercentage) AS monthlyFeePercentage
 FROM
 (
     SELECT 

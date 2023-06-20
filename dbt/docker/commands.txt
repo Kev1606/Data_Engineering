@@ -17,8 +17,7 @@ dbt --version
 
 ## creamos el patcher, podemos crear K patchers, esto es el programa donde se configura
 ## entradas, salidas, transformaciones y cargas
-## le pongo fedaracion porque el ejemplo lo voy a usar de la federacion unida de planetas, viene de viaje a las estrellas
-## creando el proyecto con el nombre "federation"
+## creando el proyecto con el nombre "transpacces"
 dbt init transpacces
 
 ## el archivo de profiles ya va estar mapeando al /root/.dbt/profiles.yml 

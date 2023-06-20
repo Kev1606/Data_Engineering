@@ -2,6 +2,8 @@ library(forecast)
 library(tidyverse)
 library(ggplot2)
 library(RODBC)
+library(writexl)
+
 
 # Paso 1: Establecer una conexión con la base de datos utilizando autenticación de Windows
 con <- odbcConnect("sqlconnect")
@@ -37,8 +39,8 @@ prediccion_df <- as.data.frame(prediccion)
 # Paso adicional: Agregar una columna con el año
 prediccion_df$year <- seq(max(datos$year) + 1, length.out = nrow(prediccion_df))
 
-# Paso adicional: Guardar la predicción en un archivo CSV
-write.csv(prediccion_df, file = "prediccion.csv", row.names = FALSE)
+# Paso adicional: Guardar la predicción en un archivo XLSX
+write_xlsx(prediccion_df, path = "prediccion.xlsx")
 
 # Paso 7: Cerrar la conexión con la base de datos
 odbcClose(con)

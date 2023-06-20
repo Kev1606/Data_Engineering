@@ -1,9 +1,4 @@
--- DATA WAREHOUSE --
--- FACT TABLE
--- COLUMNS: id, serviceName, month, year, KMs, tripQuantity, fee, %disabilities
-
--- GROUP BY serviceName
--- Agrupada por el servicio
+{{ config(materialized='view', schema='facts') }}
 
 SELECT 
     ROW_NUMBER() OVER (ORDER BY YEAR(rs.[useDate])) AS id,
@@ -13,7 +8,7 @@ SELECT
     SUM(rs.[kilometers]) AS totalKilometers,
     COUNT(*) AS tripQuantity
 
-	-- porcentaje del fee, (ser· aÒadido a la tabla de Services)
+	-- porcentaje del fee, (ser√° a√±adido a la tabla de Services)
 	-- porcentaje de discapacitados (sacar un porcentaje con base a si el Users tiene relacion con DisabilitiesByUser)
 FROM [dbo].[recurrenceServicesOn] rs
 GROUP BY rs.[service], YEAR(rs.[useDate]), MONTH(rs.[useDate])

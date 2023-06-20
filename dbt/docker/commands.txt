@@ -17,6 +17,7 @@ dbt --version
 
 ## creamos el patcher, podemos crear K patchers, esto es el programa donde se configura
 ## entradas, salidas, transformaciones y cargas
+
 ## creando el proyecto con el nombre "transpacces"
 dbt init transpacces
 
